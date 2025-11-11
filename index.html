@@ -1,30 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>College Management System</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>College Management System</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Students</a>
-      <a href="#">Courses</a>
-      <a href="#">Faculty</a>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2>Welcome!</h2>
-      <p>Manage your college operations here.</p>
-      <button onclick="showAlert()">Click Me</button>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 College Management System
-  </footer>
-  <script src="main.js"></script>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMWEyYTZjIiBkPSJNMTEuNSAxLjVhMS41IDEuNSAwIDAgMC0xLjUgMS41djEwLjVhMS41IDEuNSAwIDAgMCAxLjUgMS41aDEwLjVhMS41IDEuNSAwIDAgMCAxLjUtMS41VjMuNUExLjUgMS41IDAgMCAwIDE0LjUgMS41aC0zLjV6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTEyIDMuNWgtMnYxNGgyVjMuNXoiLz48cGF0aCBmaWxsPSIjMWEyYTZjIiBkPSJNMTIgMTYuNWgtMnYyLjVoMlYxNi41eiIvPjwvc3ZnPg==" alt="University Logo">
+                <h1>University Management System</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" id="about-link"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#" id="academics-link"><i class="fas fa-graduation-cap"></i> Academics</a></li>
+                    <li><a href="#" id="admissions-link"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+                    <li><a href="#" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#" id="logout-link" style="display:none;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home-section">
+                <div class="hero">
+                    <div class="hero-text">
+                        <h2>Welcome to Our University</h2>
+                        <p>Discover excellence in education, research, and innovation</p>
+                        <a href="#academics" class="btn-primary">Explore Programs</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMxYTJhNmMiIGQ9Ik0xMiAyQzYuNDggMiAyaDQuNWMuNTUgMCAxIC40NSAxIDF2MTJjMCAuNTUtLjQ1IDEtMSAxaC00LjVjLS41NSAwLTEtLjQ1LTEtMVYzYzAtLjU1LjQ1LTEgMS0xem0wIDEwYzEuMSAwIDIuMi0uOSAyLjItMi4yIDAtMS4xLS45LTIuMi0yLjItMi4yLTEuMSAwLTIuMi45LTIuMiAyLjIgMCAxLjEuOSAyLjIgMi4yIDIuMnoiLz48cGF0aCBmaWxsPSIjMmYyZjJmIiBkPSJNMTEuNSAzLjVhMS41IDEuNSAwIDAgMC0xLjUgMS41djEwLjVhMS41IDEuNSAwIDAgMCAxLjUgMS41aDEwLjVhMS41IDEuNSAwIDAgMCAxLjUtMS41VjMuNUExLjUgMS41IDAgMCAwIDE0LjUgMS41aC0zLjV6Ii8+PC9zdmc+" alt="University Campus">
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fas fa-book-open fa-3x"></i>
+                        <h3>Academic Excellence</h3>
+                        <p>World-class programs taught by renowned faculty members</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-laptop-code fa-3x"></i>
+                        <h3>Research Opportunities</h3>
+                        <p>State-of-the-art facilities for cutting-edge research</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h3>Diverse Community</h3>
+                        <p>Join a vibrant community of students from around the world</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>12,500+</h3>
+                        <p>Students</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>850+</h3>
+                        <p>Faculty Members</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>Programs</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Graduation Rate</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-section" style="display:none;">
+                <div class="section-header">
+                    <h2>About Our University</h2>
+                    <p>Learn about our history, mission, and values</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our History</h3>
+                        <p>Founded in 1952, our university has grown from a small college into a leading institution of higher learning. Over the decades, we've maintained our commitment to academic excellence while adapting to the changing needs of society.</p>
+                        
+                        <h3>Mission & Vision</h3>
+                        <p>Our mission is to provide transformative education that empowers students to become leaders in their fields and contribute meaningfully to society. We envision a world where knowledge and innovation drive positive change.</p>
+                        
+                        <h3>Core Values</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Academic Excellence</li>
+                            <li><i class="fas fa-check-circle"></i> Innovation and Research</li>
+                            <li><i class="fas fa-check-circle"></i> Diversity and Inclusion</li>
+                            <li><i class="fas fa-check-circle"></i> Community Engagement</li>
+                            <li><i class="fas fa-check-circle"></i> Sustainability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiMxYTJhNmMiIGQ9Ik0xMiAyQzYuNDggMiAyaDQuNWMuNTUgMCAxIC40NSAxIDF2MTJjMCAuNTUtLjQ1IDEtMSAxaC00LjVjLS41NSAwLTEtLjQ1LTEtMVYzYzAtLjU1LjQ1LTEgMS0xem0wIDEwYzEuMSAwIDIuMi0uOSAyLjItMi4yIDAtMS4xLS45LTIuMi0yLjItMi4yLTEuMSAwLTIuMi45LTIuMiAyLjIgMCAxLjEuOSAyLjIgMi4yIDIuMnoiLz48cGF0aCBmaWxsPSIjMmYyZjJmIiBkPSJNMTEuNSAzLjVhMS41IDEuNSAwIDAgMC0xLjUgMS41djEwLjVhMS41IDEuNSAwIDAgMCAxLjUgMS41aDEwLjVhMS41IDEuNSAwIDAgMCAxLjUtMS41VjMuNUExLjUgMS41IDAgMCAwIDE0LjUgMS41aC0zLjV6Ii8+PC9zdmc+" alt="University Building">
+                    </div>
+                </div>
+            </section>
+
+            <section id="academics-section" style="display:none;">
+                <div class="section-header">
+                    <h2>Academic Programs</h2>
+                    <p>Explore our diverse range of undergraduate and graduate programs</p>
+                </div>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Science & Engineering</h3>
+                        <p>From computer science to biomedical engineering, our programs prepare students for tomorrow's challenges.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Business & Economics</h3>
+                        <p>Develop leadership skills and entrepreneurial mindset through our business programs.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Arts & Humanities</h3>
+                        <p>Cultivate creativity and critical thinking through our liberal arts programs.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Health Sciences</h3>
+                        <p>Prepare for careers in medicine, nursing, and public health.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="faculty-section">
+                    <h3>Meet Our Faculty</h3>
+                    <div class="faculty-grid">
+                        <div class="faculty-member">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDEyYzAgNS41LTQuNSAxMC0xMCAxMHMtMTAtNC41LTEwLTEwIDQuNS0xMCAxMC0xMCAxMCA0LjUgMTAgMTB6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PC9zdmc+" alt="Faculty Member">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p>Professor of Computer Science</p>
+                        </div>
+                        
+                        <div class="faculty-member">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDEyYzAgNS41LTQuNSAxMC0xMCAxMHMtMTAtNC41LTEwLTEwIDQuNS0xMCAxMC0xMCAxMCA0LjUgMTAgMTB6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PC9zdmc+" alt="Faculty Member">
+                            <h4>Prof. Michael Chen</h4>
+                            <p>Dean of Business School</p>
+                        </div>
+                        
+                        <div class="faculty-member">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDEyYzAgNS41LTQuNSAxMC0xMCAxMHMtMTAtNC41LTEwLTEwIDQuNS0xMCAxMC0xMCAxMCA0LjUgMTAgMTB6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PHBhdGggZmlsbD0iIzFiMmYxZiIgZD0iTTIwIDExLjVjMC0uODQtLjY5LTEuNS0xLjUtMS41cy0xLjUuNjktMS41IDEuNS42OSAxLjUgMS41IDEuNSAxLjUtLjY5IDEuNS0xLjV6Ii8+PC9zdmc+" alt="Faculty Member">
+                            <h4>Dr. Emily Rodriguez</h4>
+                            <p>Professor of Psychology</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="admissions-section" style="display:none;">
+                <div class="section-header">
+                    <h2>Admissions</h2>
+                    <p>Learn about our application process and requirements</p>
+                </div>
+                
+                <div class="admissions-content">
+                    <div class="admissions-steps">
+                        <h3>Application Process</h3>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Research Programs</h4>
+                                <p>Explore our academic programs and find the perfect fit for your interests.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Submit Application</h4>
+                                <p>Complete and submit your online application along with required documents.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Financial Aid</h4>
+                                <p>Apply for scholarships, grants, and financial aid opportunities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Receive Decision</h4>
+                                <p>Get notified of your admission decision within 4-6 weeks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admissions-info">
+                        <h3>Admission Requirements</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> High school diploma or equivalent</li>
+                            <li><i class="fas fa-check-circle"></i> Minimum GPA of 3.0</li>
+                            <li><i class="fas fa-check-circle"></i> SAT/ACT scores (optional)</li>
+                            <li><i class="fas fa-check-circle"></i> Personal statement</li>
+                            <li><i class="fas fa-check-circle"></i> Letters of recommendation</li>
+                            <li><i class="fas fa-check-circle"></i> Portfolio (for art programs)</li>
+                        </ul>
+                        
+                        <div class="financial-aid">
+                            <h3>Financial Aid</h3>
+                            <p>We offer various forms of financial assistance including scholarships, grants, and loans to help make your education affordable.</p>
+                            <a href="#" class="btn-primary">Apply for Financial Aid</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="login-section" style="display:none;">
+                <div class="login-container">
+                    <div class="login-form">
+                        <h2>Student Portal Login</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username"><i class="fas fa-user"></i> Student ID:</label>
+                                <input type="text" id="username" name="username" placeholder="Enter your Student ID" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="fas fa-lock"></i> Password:</label>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Login to Portal</button>
+                        </form>
+                        <p id="login-error" class="error-message"></p>
+                        <div class="login-links">
+                            <a href="#">Forgot Password?</a>
+                            <a href="#">Create New Account</a>
+                        </div>
+                    </div>
+                    
+                    <div class="login-image">
+                        <h3>Access Your Academic Resources</h3>
+                        <p>View grades, register for courses, and access library resources</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 University Avenue, City, State 12345</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@university.edu</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Calendar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Library Resources</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Student Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Career Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 University Management System. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

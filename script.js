@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get references to main containers
+
     const loginContainer = document.getElementById('login-container');
     const dashboardContainer = document.getElementById('dashboard-container');
 
-    // Get references to login elements
+   
     const loginForm = document.getElementById('login-form');
     const loginError = document.getElementById('login-error');
 

@@ -16,78 +16,67 @@
         <button type="submit">Login</button>
         <p id="login-error" class="error-message"></p>
       </form>
-      <p>Use username: `user` and password: `password`</p>
+      <p>Use username: user and password: password</p>
     </div>
-    <header>
-        <h1>College Management System</h1>
+
+    <!-- Dashboard Container (hidden by default) -->
+    <div id="dashboard-container" style="display: none;">
+      <header>
+        <h1 class="title">College Management Dashboard</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Student Report</a>
-            <a href="#">Attendance</a>
-            <a href="#">Results</a>
-            <a href="#">Fee Deposit</a>
-            <!-- Add more navigation if needed -->
+          <ul>
+            <li><a href="#" id="nav-home">Home</a></li>
+            <li><a href="#" id="nav-students">Student Report</a></li>
+            <li><a href="#" id="nav-attendance">Attendance</a></li>
+            <li><a href="#" id="nav-results">Results</a></li>
+            <li><a href="#" id="nav-fees">Fee Deposit</a></li>
+            <li><button id="logout-button">Logout</button></li>
+          </ul>
         </nav>
-    </header>
-    <main>
-        <section class="welcome">
-            <h2>Welcome to the College Management System!</h2>
-            <p>This is your dashboard.</p>
-        </section>
+      </header>
 
-        <section class="about-college">
-            <h3>About Our College</h3>
-            <p>
-                Our college is committed to academic excellence, innovative research, and the holistic development of students.
-                We offer a wide range of programs and modern facilities to nurture future leaders.
-            </p>
-        </section>
+      <main id="dashboard-content">
+        <!-- Home Section -->
+        <div id="home-section" class="content-section">
+          <h2>Welcome to the College Management System!</h2>
+          <p>This is your dashboard. Use the navigation above to access different features like student reports, attendance, results, and fee information.</p>
+          <p>This is a frontend-only demonstration. All data displayed is dummy data and login is simulated.</p>
+        </div>
 
-        <section class="highlights">
-            <h3>Highlights</h3>
-            <ul>
-                <li>Highly qualified faculty</li>
-                <li>Modern library and labs</li>
-                <li>Active student clubs and events</li>
-                <li>Placement and career guidance</li>
-            </ul>
-        </section>
+        <!-- Student Report Section -->
+        <div id="students-section" class="content-section" style="display: none;">
+          <h2>Student Report</h2>
+          <div id="student-list">
+            <!-- Student data will be rendered here by JavaScript -->
+          </div>
+        </div>
 
-        <section class="announcements">
-            <h3>Latest Announcements</h3>
-            <ul>
-                <li>Admissions open for 2025-26</li>
-                <li>Semester exams start from Dec 1</li>
-                <li>Annual Fest scheduled for Nov 30</li>
-            </ul>
-        </section>
+        <!-- Attendance Section -->
+        <div id="attendance-section" class="content-section" style="display: none;">
+          <h2>Attendance Records</h2>
+          <div id="attendance-data">
+            <!-- Attendance data will be rendered here by JavaScript -->
+          </div>
+        </div>
 
-        <section class="quick-links">
-            <h3>Quick Links</h3>
-            <a href="#">Academics</a> |
-            <a href="#">Admissions</a> |
-            <a href="#">Contact Us</a> |
-            <a href="#">Student Login</a>
-        </section>
+        <!-- Results Section -->
+        <div id="results-section" class="content-section" style="display: none;">
+          <h2>Student Results</h2>
+          <div id="results-data">
+            <!-- Results data will be rendered here by JavaScript -->
+          </div>
+        </div>
 
-        <section class="testimonials">
-            <h3>Student Testimonials</h3>
-            <blockquote>
-                "The supportive faculty and vibrant campus life made my college years unforgettable." - Priya Sharma, Alumni
-            </blockquote>
-            <blockquote>
-                "I secured my dream job thanks to our placement cell." - Ravi Kumar, Class of 2023
-            </blockquote>
-        </section>
+        <!-- Fee Deposit Section -->
+        <div id="fees-section" class="content-section" style="display: none;">
+          <h2>Fee Deposit Information</h2>
+          <div id="fees-data">
+            <!-- Fee data will be rendered here by JavaScript -->
+          </div>
+        </div>
+      </main>
+    </div>
 
-    </main>
-    <footer>
-        <p>© 2025 College Management System. All rights reserved.</p>
-        <p>Contact: info@collegems.edu.in | Phone: +91-12345-67890</p>
-    </footer>
-</body>
-</html>
     <script src="script.js"></script>
   </body>
 </html>
-

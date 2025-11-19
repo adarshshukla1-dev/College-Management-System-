@@ -1,4 +1,3 @@
-// Existing notices and form setup code unchanged
 const notices = [
   "Semester exams will start from Dec 10, 2025.",
   "New sports complex inaugurates on Nov 21, 2025."
@@ -13,7 +12,7 @@ const students = [
   "Ethan Wang"
 ];
 
-// Render notices
+// Render notices dynamically
 function renderNotices() {
   const noticeList = document.getElementById("notice-list");
   noticeList.innerHTML = "";
@@ -28,14 +27,14 @@ function renderNotices() {
   });
 }
 
-// Add new sample notice
+// Add a sample notice dynamically
 function addNotice() {
   const newNotice = `Sample notice added at ${new Date().toLocaleTimeString()}`;
   notices.push(newNotice);
   renderNotices();
 }
 
-// Render attendance table rows
+// Render the attendance table
 function renderAttendanceTable() {
   const tbody = document.querySelector("#attendanceTable tbody");
   tbody.innerHTML = ""; // Clear existing rows
@@ -67,7 +66,7 @@ function renderAttendanceTable() {
   });
 }
 
-// Save attendance data
+// Save attendance and show confirmation
 function saveAttendance() {
   const attendanceData = students.map((student, index) => {
     const selected = document.querySelector(`input[name="attendance-${index}"]:checked`);
@@ -80,13 +79,12 @@ function saveAttendance() {
   console.log("Saved Attendance:", attendanceData);
   document.getElementById("statusMessage").textContent = "Attendance saved successfully!";
 
-  // Clear message after 3 seconds
   setTimeout(() => {
     document.getElementById("statusMessage").textContent = "";
   }, 3000);
 }
 
-// Smooth scroll and form validation (unchanged from previous)
+// Smooth scrolling for in-page nav
 function smoothScroll(event) {
   event.preventDefault();
   const targetId = event.currentTarget.getAttribute("href").substring(1);
@@ -97,6 +95,7 @@ function smoothScroll(event) {
   });
 }
 
+// Form validation helper
 function validateForm(form) {
   let valid = true;
   form.querySelectorAll("input, select, textarea").forEach((field) => {
@@ -141,7 +140,6 @@ function setupNavigation() {
   });
 }
 
-// Initialize everything on page load
 window.onload = () => {
   renderNotices();
   document.getElementById("addNoticeBtn").onclick = addNotice;
@@ -150,3 +148,4 @@ window.onload = () => {
   renderAttendanceTable();
   document.getElementById("saveAttendanceBtn").onclick = saveAttendance;
 };
+

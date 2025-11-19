@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Management System</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Management System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to Example College</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#notices">Notices</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#join">Join Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="flash-notice">Latest Updates: Admissions open for 2025 session!</div>
-    </header>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Our college has a rich tradition of academic excellence and holistic development.</p>
+  <header>
+    <h1>Welcome to Example College</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#notices" class="nav-link">Notices</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#join" class="nav-link">Join Us</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="flash-notice" class="flash-notice">Admissions open for 2025 session! Apply now.</div>
+  </header>
+
+  <main id="home">
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>
+        Our college has a rich tradition of academic excellence, innovation, and holistic development. We offer a
+        variety of courses, extracurricular activities, and student support programs.
+      </p>
     </section>
-    
-    <section id="notices">
-        <h2>Notices</h2>
-        <ul id="notice-list">
-            <!-- Notices will be injected here -->
-        </ul>
-        <button onclick="addNotice()">Add Sample Notice</button>
+
+    <section id="notices" class="section">
+      <h2>Notices</h2>
+      <ul id="notice-list" class="notice-list"></ul>
+      <button id="addNoticeBtn" class="btn btn-primary">Add Sample Notice</button>
     </section>
-    
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <img src="event1.jpg" alt="Event 1">
-            <img src="event2.jpg" alt="Event 2">
-        </div>
+
+    <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="event1.jpg" alt="Event 1" />
+        <img src="event2.jpg" alt="Event 2" />
+      </div>
     </section>
-    
-    <section id="join">
-        <h2>Join Us</h2>
-        <form id="admissionForm">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <button type="submit">Apply</button>
-        </form>
+
+    <section id="join" class="section">
+      <h2>Join Us</h2>
+      <form id="admissionForm" class="form">
+        <input type="text" name="name" placeholder="Name" required minlength="3" />
+        <input type="email" name="email" placeholder="Email" required />
+        <select name="course" required>
+          <option value="">Select Course</option>
+          <option value="computer_science">Computer Science</option>
+          <option value="business_administration">Business Administration</option>
+          <option value="arts">Arts</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Apply</button>
+      </form>
     </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <textarea placeholder="Your Feedback" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <form id="contactForm" class="form">
+        <input type="text" name="visitorName" placeholder="Your Name" required minlength="3" />
+        <textarea name="message" placeholder="Your Feedback" required minlength="10"></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
     </section>
-    
-    <footer>
-        <p>&copy; 2025 Example College. All rights reserved.</p>
-    </footer>
-    
-    <script src="script.js"></script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Example College. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-

@@ -1,3 +1,65 @@
+// Hardcoded user for demo purpose
+const validUser = {
+  username: "admin",
+  password: "password123"
+};
+
+const loginSection = document.getElementById("loginSection");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+const logoutBtn = document.getElementById("logoutBtn");
+const mainContent = document.querySelector("main");
+const header = document.querySelector("header");
+
+// Show or hide content depending on login state
+function updateUIForLoginState() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (isLoggedIn === "true") {
+    loginSection.style.display = "none";
+    mainContent.style.display = "block";
+    header.style.display = "block";
+    logoutBtn.style.display = "inline-block";
+  } else {
+    loginSection.style.display = "block";
+    mainContent.style.display = "none";
+    header.style.display = "none";
+    logoutBtn.style.display = "none";
+  }
+}
+
+// Handle login form submit
+loginForm.onsubmit = function (e) {
+  e.preventDefault();
+  loginError.textContent = "";
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (username === validUser.username && password === validUser.password) {
+    localStorage.setItem("isLoggedIn", "true");
+    updateUIForLoginState();
+  } else {
+    loginError.textContent = "Invalid username or password.";
+  }
+};
+
+// Handle logout button click
+logoutBtn.onclick = function () {
+  localStorage.removeItem("isLoggedIn");
+  updateUIForLoginState();
+};
+
+// Initialize UI on page load
+window.onload = () => {
+  updateUIForLoginState();
+
+  // Existing initialization calls
+  renderNotices();
+  document.getElementById("addNoticeBtn").onclick = addNotice;
+  setupFormValidation();
+  setupNavigation();
+  renderAttendanceTable();
+  document.getElementById("saveAttendanceBtn").onclick = saveAttendance;
+};
 const notices = [
   "Semester exams will start from Dec 10, 2025.",
   "New sports complex inaugurates on Nov 21, 2025."

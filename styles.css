@@ -1,3 +1,4 @@
+
 :root {
   --primary-color: #003366;
   --secondary-color: #feb236;
@@ -54,6 +55,35 @@ nav ul li a:hover,
 nav ul li a.active {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+.login-section {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-logout {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #bb2222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 700;
+  display: none;
 }
 
 .flash-notice {

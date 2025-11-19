@@ -15,6 +15,7 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   background: var(--background-color);
+  line-height: 1.6;
 }
 
 header {
@@ -85,6 +86,50 @@ main {
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
+.program-card, .faculty-member {
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 15px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.faculty-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+blockquote {
+  font-style: italic;
+  background: #ecf4fc;
+  padding: 15px 20px;
+  border-left: 5px solid var(--primary-color);
+  margin: 15px 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.notice-list {
+  list-style: square inside;
+  margin-bottom: 15px;
+  padding-left: 1em;
+}
+
 .attendance-table {
   width: 100%;
   border-collapse: collapse;
@@ -106,12 +151,6 @@ main {
 .status-message {
   font-weight: 600;
   color: green;
-}
-
-.notice-list {
-  list-style: square inside;
-  margin-bottom: 15px;
-  padding-left: 1em;
 }
 
 form {
@@ -154,6 +193,20 @@ textarea {
   background-color: #001d33;
 }
 
+.contact-info p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 20px 0;
@@ -173,8 +226,9 @@ footer {
     padding: 15px;
     width: 100%;
   }
-  .gallery img {
-    width: 100%;
-    height: auto;
+  .faculty-photo {
+    width: 90px;
+    height: 90px;
   }
 }
+

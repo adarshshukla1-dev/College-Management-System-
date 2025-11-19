@@ -1,81 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>College Management System (Frontend Only)</title>
+    <title>College Website</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Login Container -->
-    <div id="login-container">
-      <h1 class="title">Login to CMS</h1>
-      <form id="login-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required /><br /><br />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required /><br /><br />
-        <button type="submit">Login</button>
-        <p id="login-error" class="error-message"></p>
-      </form>
-      <p>Use username: user and password: password</p>
-    </div>
+    <header>
+      <nav class="main-nav">
+        <div class="logo">College Name</div>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="notice.html">Notice</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- Dashboard Container (hidden by default) -->
-    <div id="dashboard-container" style="display: none;">
-      <header>
-        <h1 class="title">College Management Dashboard</h1>
-        <nav>
-          <ul>
-            <li><a href="#" id="nav-home">Home</a></li>
-            <li><a href="#" id="nav-students">Student Report</a></li>
-            <li><a href="#" id="nav-attendance">Attendance</a></li>
-            <li><a href="#" id="nav-results">Results</a></li>
-            <li><a href="#" id="nav-fees">Fee Deposit</a></li>
-            <li><button id="logout-button">Logout</button></li>
-          </ul>
-        </nav>
-      </header>
+    <main>
+      <h1 class="title">Welcome to Our College!</h1>
+      <p>This is the home page. Here you'll find flash notices and latest updates.</p>
 
-      <main id="dashboard-content">
-        <!-- Home Section -->
-        <div id="home-section" class="content-section">
-          <h2>Welcome to the College Management System!</h2>
-          <p>This is your dashboard. Use the navigation above to access different features like student reports, attendance, results, and fee information.</p>
-          <p>This is a frontend-only demonstration. All data displayed is dummy data and login is simulated.</p>
-        </div>
+      <section class="flash-notices">
+        <h2>Flash Notices & Latest Updates</h2>
+        <ul>
+          <li><a href="#">Admission for Fall 2024 is now open! Apply by August 15th.</a> <span class="new-badge">NEW</span></li>
+          <li><a href="#">Annual Sports Day will be held on October 20th.</a></li>
+          <li><a href="#">Scholarship applications for new students are available.</a></li>
+          <li><a href="#">Important: College will remain closed on [Date] for [Event].</a></li>
+        </ul>
+        <a href="notice.html" class="view-all-notices">View All Notices</a>
+      </section>
 
-        <!-- Student Report Section -->
-        <div id="students-section" class="content-section" style="display: none;">
-          <h2>Student Report</h2>
-          <div id="student-list">
-            <!-- Student data will be rendered here by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Attendance Section -->
-        <div id="attendance-section" class="content-section" style="display: none;">
-          <h2>Attendance Records</h2>
-          <div id="attendance-data">
-            <!-- Attendance data will be rendered here by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Results Section -->
-        <div id="results-section" class="content-section" style="display: none;">
-          <h2>Student Results</h2>
-          <div id="results-data">
-            <!-- Results data will be rendered here by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Fee Deposit Section -->
-        <div id="fees-section" class="content-section" style="display: none;">
-          <h2>Fee Deposit Information</h2>
-          <div id="fees-data">
-            <!-- Fee data will be rendered here by JavaScript -->
-          </div>
-        </div>
-      </main>
-    </div>
+      <p id="currentTime"></p>
+    </main>
 
     <script src="script.js"></script>
   </body>

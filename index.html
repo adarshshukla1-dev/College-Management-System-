@@ -11,7 +11,18 @@
   <header>
     <h1>Welcome to Example College</h1>
     <nav>
-      <ul>
+      <ul><section id="loginSection" class="section login-section">
+  <h2>Login</h2>
+  <form id="loginForm" class="form">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit" class="btn btn-primary">Login</button>
+    <p id="loginError" class="error-message"></p>
+  </form>
+</section>
+
+<button id="logoutBtn" class="btn btn-logout" style="display:none;">Logout</button>
+
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#programs" class="nav-link">Programs</a></li>

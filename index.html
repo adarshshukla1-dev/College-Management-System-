@@ -1,172 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Example College Management System</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Example College</h1>
-    <nav>
-      <ul><section id="loginSection" class="section login-section">
-  <h2>Login</h2>
-  <form id="loginForm" class="form">
-    <input type="text" id="username" placeholder="Username" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button type="submit" class="btn btn-primary">Login</button>
-    <p id="loginError" class="error-message"></p>
-  </form>
-</section>
+    <header class="header">
+        <div class="container">
+            <h1>College Management System</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#" data-section="students">Students</a></li>
+                    <li><a href="#" data-section="courses">Courses</a></li>
+                    <li><a href="#" data-section="faculty">Faculty</a></li>
+                    <li><a href="#" data-section="admissions">Admissions</a></li>
+                    <li><a href="#" data-section="grades">Grades</a></li>
+                    <li><a href="#" data-section="library">Library</a></li>
+                    <li><a href="#" data-section="settings">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="auth-controls">
+                <button id="loginLogoutBtn" class="action-button login">Login</button>
+            </div>
+        </div>
+    </header>
 
-<button id="logoutBtn" class="btn btn-logout" style="display:none;">Logout</button>
+    <main class="main-content container">
+        <section id="dashboard" class="content-section active">
+            <h2>Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Courses</h3>
+                    <p id="totalCourses">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Faculty</h3>
+                    <p id="totalFaculty">0</p>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Events</h3>
+                    <ul id="upcomingEvents">
+                        <li>Orientation Day - Aug 25</li>
+                        <li>Mid-term Exams - Oct 15</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Recent Activities</h3>
+                    <ul id="recentActivities">
+                        <li>Student S005 enrolled in CS101</li>
+                        <li>New course BA400 added</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#programs" class="nav-link">Programs</a></li>
-        <li><a href="#notices" class="nav-link">Notices</a></li>
-        <li><a href="#attendance" class="nav-link">Attendance</a></li>
-        <li><a href="#events" class="nav-link">Events</a></li>
-        <li><a href="#faculty" class="nav-link">Faculty</a></li>
-        <li><a href="#success" class="nav-link">Success Stories</a></li>
-        <li><a href="#join" class="nav-link">Join Us</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <div id="flash-notice" class="flash-notice">Admissions open for 2025 session! Apply now.</div>
-  </header>
+        <section id="students" class="content-section">
+            <h2>Students Management</h2>
+            <div class="controls-row">
+                <input type="text" id="studentSearch" placeholder="Search students by name or ID...">
+                <button class="add-button" id="addStudentBtn">Add New Student</button>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Major</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- Student data will be loaded here by JavaScript -->
+                        <tr><td colspan="5">No student data available.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-  <main id="home">
-    <section id="about" class="section">
-      <h2>About Us</h2>
-      <p>
-        Established in 1985, Example College has a proud legacy of providing quality education with an emphasis on research,
-        innovation, and holistic student development. Our campus fosters a nurturing and inclusive environment that empowers
-        students to succeed academically and personally.
-      </p>
-      <p>
-        Our mission is to prepare today's learners to become tomorrow's leaders by offering cutting-edge programs, dedicated faculty,
-        and rich extracurricular opportunities.
-      </p>
-    </section>
+        <section id="courses" class="content-section">
+            <h2>Courses Management</h2>
+            <div class="controls-row">
+                <input type="text" id="courseSearch" placeholder="Search courses by code or title...">
+                <button class="add-button" id="addCourseBtn">Add New Course</button>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Title</th>
+                            <th>Credits</th>
+                            <th>Department</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coursesTableBody">
+                        <!-- Course data will be loaded here by JavaScript -->
+                        <tr><td colspan="5">No course data available.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <section id="programs" class="section">
-      <h2>Academic Programs</h2>
-      <div class="program-card">
-        <h3>Computer Science</h3>
-        <p>Dive into topics like software engineering, artificial intelligence, cybersecurity, and data science. Our labs and projects give hands-on experience with real-world applications.</p>
-        <a href="#">See detailed syllabus</a>
-      </div>
-      <div class="program-card">
-        <h3>Business Administration</h3>
-        <p>Learn leadership, finance, marketing, and entrepreneurship from experienced professors. Opportunities include internships, case competitions, and networking events.</p>
-        <a href="#">See detailed syllabus</a>
-      </div>
-      <div class="program-card">
-        <h3>Arts and Humanities</h3>
-        <p>Explore literature, history, philosophy, and creative writing through critical study and creative practice. Our supportive community encourages interdisciplinary learning.</p>
-        <a href="#">See detailed syllabus</a>
-      </div>
-    </section>
+        <section id="faculty" class="content-section">
+            <h2>Faculty Management</h2>
+            <div class="controls-row">
+                <input type="text" id="facultySearch" placeholder="Search faculty by name or ID...">
+                <button class="add-button" id="addFacultyBtn">Add New Faculty</button>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="facultyTableBody">
+                        <!-- Faculty data will be loaded here by JavaScript -->
+                        <tr><td colspan="5">No faculty data available.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-    <section id="notices" class="section">
-      <h2>Notices</h2>
-      <ul id="notice-list" class="notice-list"></ul>
-      <button id="addNoticeBtn" class="btn btn-primary">Add Sample Notice</button>
-    </section>
+        <section id="admissions" class="content-section">
+            <h2>Admissions</h2>
+            <p>Manage student applications, review statuses, and process enrollments.</p>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Application Statistics</h3>
+                    <p>Total Applications: <strong id="totalApplications">150</strong></p>
+                    <p>Accepted: <strong id="acceptedApplications">80</strong></p>
+                    <p>Pending: <strong id="pendingApplications">40</strong></p>
+                    <p>Rejected: <strong id="rejectedApplications">30</strong></p>
+                </div>
+                <div class="card">
+                    <h3>New Application Form</h3>
+                    <form id="admissionForm">
+                        <label for="applicantName">Applicant Name:</label>
+                        <input type="text" id="applicantName" placeholder="Full Name" required>
 
-    <section id="attendance" class="section">
-      <h2>Attendance</h2>
-      <table id="attendanceTable" class="attendance-table">
-        <thead>
-          <tr>
-            <th>Student Name</th>
-            <th>Present</th>
-            <th>Absent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Attendance rows will be filled by script -->
-        </tbody>
-      </table>
-      <button id="saveAttendanceBtn" class="btn btn-primary">Save Attendance</button>
-      <p id="statusMessage" class="status-message"></p>
-    </section>
+                        <label for="applicantEmail">Email:</label>
+                        <input type="email" id="applicantEmail" placeholder="email@example.com" required>
 
-    <section id="events" class="section">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li>Guest Lecture: Advances in AI - Nov 25, 2025</li>
-        <li>Annual Sports Day - Dec 5, 2025</li>
-        <li>Winter Semester Exams - Dec 10-22, 2025</li>
-      </ul>
-    </section>
+                        <label for="applicantMajor">Desired Major:</label>
+                        <select id="applicantMajor" required>
+                            <option value="">Select Major</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Business Administration">Business Administration</option>
+                            <option value="Physics">Physics</option>
+                        </select>
+                        <button type="submit" class="add-button">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    <section id="faculty" class="section">
-      <h2>Faculty Spotlight</h2>
-      <div class="faculty-member">
-        <img src="faculty1.jpg" alt="Dr. Jane Doe" class="faculty-photo" />
-        <h3>Dr. Jane Doe</h3>
-        <p>Professor of Computer Science with 15 years of research in AI and Machine Learning.</p>
-      </div>
-      <div class="faculty-member">
-        <img src="faculty2.jpg" alt="Prof. John Smith" class="faculty-photo" />
-        <h3>Prof. John Smith</h3>
-        <p>Business Department Chair focusing on sustainable practices and entrepreneurship.</p>
-      </div>
-    </section>
+        <section id="grades" class="content-section">
+            <h2>Grades Management</h2>
+            <p>View and manage student grades for various courses.</p>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Grade Entry</h3>
+                    <form id="gradeEntryForm">
+                        <label for="studentSelect">Student:</label>
+                        <select id="studentSelect">
+                            <option value="">Select Student</option>
+                        </select>
+                        <label for="courseSelect">Course:</label>
+                        <select id="courseSelect">
+                            <option value="">Select Course</option>
+                        </select>
+                        <label for="gradeInput">Grade:</label>
+                        <input type="text" id="gradeInput" placeholder="Enter Grade (e.g., A, B+, 85)" required>
+                        <button type="submit" class="add-button">Submit Grade</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Recent Grades</h3>
+                    <div class="table-responsive">
+                        <table id="gradesTable">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Grade</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gradesTableBody">
+                                <!-- Grades will be loaded here by JavaScript -->
+                                <tr><td colspan="4">No grades recorded.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="success" class="section">
-      <h2>Student Success Stories</h2>
-      <blockquote>
-        "My time at Example College prepared me for a thriving career in tech." <br />- Alice S.
-      </blockquote>
-      <blockquote>
-        "The supportive faculty helped me grow both academically and personally." <br />- Bob J.
-      </blockquote>
-    </section>
+        <section id="library" class="content-section">
+            <h2>Library Management</h2>
+            <p>Manage books, patrons, and borrowing records.</p>
+            <div class="controls-row">
+                <input type="text" id="bookSearch" placeholder="Search books by title or author...">
+                <button class="add-button" id="addBookBtn">Add New Book</button>
+            </div>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>Library Statistics</h3>
+                    <p>Total Books: <strong id="totalBooks">5,200</strong></p>
+                    <p>Books On Loan: <strong id="booksOnLoan">350</strong></p>
+                    <p>Overdue Books: <strong id="overdueBooks">15</strong></p>
+                </div>
+                <div class="card full-width">
+                    <h3>Available Books</h3>
+                    <div class="table-responsive">
+                        <table id="booksTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Genre</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="booksTableBody">
+                                <!-- Books will be loaded here by JavaScript -->
+                                <tr><td colspan="5">No books available.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="join" class="section">
-      <h2>Join Us</h2>
-      <form id="admissionForm" class="form">
-        <input type="text" name="name" placeholder="Name" required minlength="3" />
-        <input type="email" name="email" placeholder="Email" required />
-        <select name="course" required>
-          <option value="">Select Course</option>
-          <option value="computer_science">Computer Science</option>
-          <option value="business_administration">Business Administration</option>
-          <option value="arts">Arts</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Apply</button>
-      </form>
-    </section>
+        <section id="settings" class="content-section">
+            <h2>Settings</h2>
+            <p>Configure system preferences, user roles, and security.</p>
+            <div class="card">
+                <h3>User Profile</h3>
+                <p><strong>Admin User</strong></p>
+                <p>Email: admin@college.edu</p>
+                <button class="add-button">Change Password</button>
+            </div>
+            <div class="card">
+                <h3>System Configuration</h3>
+                <form>
+                    <label for="collegeName">College Name:</label>
+                    <input type="text" id="collegeName" value="Awesome College">
 
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <form id="contactForm" class="form">
-        <input type="text" name="visitorName" placeholder="Your Name" required minlength="3" />
-        <textarea name="message" placeholder="Your Feedback" required minlength="10"></textarea>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
-      <div class="contact-info">
-        <p>Email: info@examplecollege.edu</p>
-        <p>Phone: +1 (555) 123-4567</p>
-        <p>Address: 123 College Ave, City, Country</p>
-        <p>Follow us:
-          <a href="#" target="_blank">Facebook</a> |
-          <a href="#" target="_blank">Twitter</a> |
-          <a href="#" target="_blank">Instagram</a>
-        </p>
-      </div>
-    </section>
-  </main>
+                    <label for="academicYear">Current Academic Year:</label>
+                    <input type="text" id="academicYear" value="2023-2024">
 
-  <footer>
-    <p>&copy; 2025 Example College. All rights reserved.</p>
-  </footer>
+                    <button type="submit" class="add-button">Save Settings</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-  <script src="script.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 College Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="studentModalTitle">Add New Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentIdHidden">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" placeholder="Student Full Name" required>
+                <label for="studentMajor">Major:</label>
+                <input type="text" id="studentMajor" placeholder="e.g., Computer Science" required>
+                <label for="studentEmail">Email:</label>
+                <input type="email" id="studentEmail" placeholder="student@college.edu" required>
+                <button type="submit" class="add-button">Save Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="courseModalTitle">Add New Course</h2>
+            <form id="courseForm">
+                <input type="hidden" id="courseCodeHidden">
+                <label for="courseCode">Code:</label>
+                <input type="text" id="courseCode" placeholder="e.g., CS101" required>
+                <label for="courseTitle">Title:</label>
+                <input type="text" id="courseTitle" placeholder="e.g., Introduction to Programming" required>
+                <label for="courseCredits">Credits:</label>
+                <input type="number" id="courseCredits" placeholder="e.g., 3" min="1" max="6" required>
+                <label for="courseDepartment">Department:</label>
+                <input type="text" id="courseDepartment" placeholder="e.g., Computer Science" required>
+                <button type="submit" class="add-button">Save Course</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="facultyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="facultyModalTitle">Add New Faculty</h2>
+            <form id="facultyForm">
+                <input type="hidden" id="facultyIdHidden">
+                <label for="facultyName">Name:</label>
+                <input type="text" id="facultyName" placeholder="Faculty Full Name" required>
+                <label for="facultyDepartment">Department:</label>
+                <input type="text" id="facultyDepartment" placeholder="e.g., Computer Science" required>
+                <label for="facultyEmail">Email:</label>
+                <input type="email" id="facultyEmail" placeholder="faculty@college.edu" required>
+                <button type="submit" class="add-button">Save Faculty</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="bookModalTitle">Add New Book</h2>
+            <form id="bookForm">
+                <input type="hidden" id="bookIdHidden">
+                <label for="bookTitle">Title:</label>
+                <input type="text" id="bookTitle" placeholder="Book Title" required>
+                <label for="bookAuthor">Author:</label>
+                <input type="text" id="bookAuthor" placeholder="Author Name" required>
+                <label for="bookGenre">Genre:</label>
+                <input type="text" id="bookGenre" placeholder="e.g., Science Fiction" required>
+                <button type="submit" class="add-button">Save Book</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

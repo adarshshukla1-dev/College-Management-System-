@@ -1,41 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>College Website</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <header>
-      <nav class="main-nav">
-        <div class="logo">College Name</div>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="notice.html">Notice</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
+        <h1>Welcome to Example College</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#notices">Notices</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#join">Join Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="flash-notice">Latest Updates: Admissions open for 2025 session!</div>
     </header>
-
-    <main>
-      <h1 class="title">Welcome to Our College!</h1>
-      <p>This is the home page. Here you'll find flash notices and latest updates.</p>
-
-      <section class="flash-notices">
-        <h2>Flash Notices & Latest Updates</h2>
-        <ul>
-          <li><a href="#">Admission for Fall 2024 is now open! Apply by August 15th.</a> <span class="new-badge">NEW</span></li>
-          <li><a href="#">Annual Sports Day will be held on October 20th.</a></li>
-          <li><a href="#">Scholarship applications for new students are available.</a></li>
-          <li><a href="#">Important: College will remain closed on [Date] for [Event].</a></li>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our college has a rich tradition of academic excellence and holistic development.</p>
+    </section>
+    
+    <section id="notices">
+        <h2>Notices</h2>
+        <ul id="notice-list">
+            <!-- Notices will be injected here -->
         </ul>
-        <a href="notice.html" class="view-all-notices">View All Notices</a>
-      </section>
-
-      <p id="currentTime"></p>
-    </main>
-
+        <button onclick="addNotice()">Add Sample Notice</button>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="event1.jpg" alt="Event 1">
+            <img src="event2.jpg" alt="Event 2">
+        </div>
+    </section>
+    
+    <section id="join">
+        <h2>Join Us</h2>
+        <form id="admissionForm">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Apply</button>
+        </form>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Your Feedback" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Example College. All rights reserved.</p>
+    </footer>
+    
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
+

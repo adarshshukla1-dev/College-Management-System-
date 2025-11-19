@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>College Management System</title>
+  <title>Example College Management System</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -14,8 +14,12 @@
       <ul>
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#programs" class="nav-link">Programs</a></li>
         <li><a href="#notices" class="nav-link">Notices</a></li>
         <li><a href="#attendance" class="nav-link">Attendance</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#faculty" class="nav-link">Faculty</a></li>
+        <li><a href="#success" class="nav-link">Success Stories</a></li>
         <li><a href="#join" class="nav-link">Join Us</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -27,9 +31,33 @@
     <section id="about" class="section">
       <h2>About Us</h2>
       <p>
-        Our college has a rich tradition of academic excellence, innovation, and holistic development. We offer a
-        variety of courses, extracurricular activities, and student support programs.
+        Established in 1985, Example College has a proud legacy of providing quality education with an emphasis on research,
+        innovation, and holistic student development. Our campus fosters a nurturing and inclusive environment that empowers
+        students to succeed academically and personally.
       </p>
+      <p>
+        Our mission is to prepare today's learners to become tomorrow's leaders by offering cutting-edge programs, dedicated faculty,
+        and rich extracurricular opportunities.
+      </p>
+    </section>
+
+    <section id="programs" class="section">
+      <h2>Academic Programs</h2>
+      <div class="program-card">
+        <h3>Computer Science</h3>
+        <p>Dive into topics like software engineering, artificial intelligence, cybersecurity, and data science. Our labs and projects give hands-on experience with real-world applications.</p>
+        <a href="#">See detailed syllabus</a>
+      </div>
+      <div class="program-card">
+        <h3>Business Administration</h3>
+        <p>Learn leadership, finance, marketing, and entrepreneurship from experienced professors. Opportunities include internships, case competitions, and networking events.</p>
+        <a href="#">See detailed syllabus</a>
+      </div>
+      <div class="program-card">
+        <h3>Arts and Humanities</h3>
+        <p>Explore literature, history, philosophy, and creative writing through critical study and creative practice. Our supportive community encourages interdisciplinary learning.</p>
+        <a href="#">See detailed syllabus</a>
+      </div>
     </section>
 
     <section id="notices" class="section">
@@ -49,11 +77,44 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Student rows dynamically inserted here -->
+          <!-- Attendance rows will be filled by script -->
         </tbody>
       </table>
       <button id="saveAttendanceBtn" class="btn btn-primary">Save Attendance</button>
       <p id="statusMessage" class="status-message"></p>
+    </section>
+
+    <section id="events" class="section">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li>Guest Lecture: Advances in AI - Nov 25, 2025</li>
+        <li>Annual Sports Day - Dec 5, 2025</li>
+        <li>Winter Semester Exams - Dec 10-22, 2025</li>
+      </ul>
+    </section>
+
+    <section id="faculty" class="section">
+      <h2>Faculty Spotlight</h2>
+      <div class="faculty-member">
+        <img src="faculty1.jpg" alt="Dr. Jane Doe" class="faculty-photo" />
+        <h3>Dr. Jane Doe</h3>
+        <p>Professor of Computer Science with 15 years of research in AI and Machine Learning.</p>
+      </div>
+      <div class="faculty-member">
+        <img src="faculty2.jpg" alt="Prof. John Smith" class="faculty-photo" />
+        <h3>Prof. John Smith</h3>
+        <p>Business Department Chair focusing on sustainable practices and entrepreneurship.</p>
+      </div>
+    </section>
+
+    <section id="success" class="section">
+      <h2>Student Success Stories</h2>
+      <blockquote>
+        "My time at Example College prepared me for a thriving career in tech." <br />- Alice S.
+      </blockquote>
+      <blockquote>
+        "The supportive faculty helped me grow both academically and personally." <br />- Bob J.
+      </blockquote>
     </section>
 
     <section id="join" class="section">
@@ -78,6 +139,16 @@
         <textarea name="message" placeholder="Your Feedback" required minlength="10"></textarea>
         <button type="submit" class="btn btn-primary">Send</button>
       </form>
+      <div class="contact-info">
+        <p>Email: info@examplecollege.edu</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 College Ave, City, Country</p>
+        <p>Follow us:
+          <a href="#" target="_blank">Facebook</a> |
+          <a href="#" target="_blank">Twitter</a> |
+          <a href="#" target="_blank">Instagram</a>
+        </p>
+      </div>
     </section>
   </main>
 
